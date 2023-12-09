@@ -6,13 +6,36 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:42:19 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/08 19:33:37 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 07:18:04 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*make_new_node(t_ps *smnn)
+int	is_lst_sorted(t_stack *stack)
+{
+	t_stack	*current;
+
+	current = stack;
+	while (current->next)
+	{
+		if (current->order > current->next->order)
+			return (0);
+		current = current->next;
+	}
+	return (1);
+}
+
+t_stack	*ft_last(t_stack *lst)
+{
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
+}
+
+t_stack	*make_new_node(void)
 {
 	t_stack	*node;
 
@@ -29,7 +52,7 @@ t_stack	*build_linked_list(t_ps *sbll, char **argv)
 	t_stack	*head;
 	t_stack	*node;
 
-	head = make_new_node(sbll);
+	head = make_new_node();
 	if (head == NULL)
 		ft_error(&head, sbll);
 	node = head;
@@ -40,7 +63,7 @@ t_stack	*build_linked_list(t_ps *sbll, char **argv)
 		node->order = 0;
 		if (i < sbll->size - 1)
 		{
-			node->next = make_new_node(sbll);
+			node->next = make_new_node();
 			if (node->next == NULL)
 				ft_error(&head, sbll);
 			node = node->next;

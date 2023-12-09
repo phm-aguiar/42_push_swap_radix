@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strisnumber.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phenriq2 <phenriq2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 11:19:47 by zeenyt            #+#    #+#             */
-/*   Updated: 2023/12/03 13:07:10 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 15:57:26 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_strisnumber(char *str)
 			index++;
 			continue ;
 		}
-		if (ft_isdigit(str[index]) == 0)
+		if (!ft_isdigit(str[index]))
 			return (0);
 		index++;
 	}

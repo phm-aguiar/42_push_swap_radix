@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 12:13:42 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/08 19:24:00 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 18:50:15 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 # define PUSH_SWAP_H
 
 # include "../libs/libft/libft.h"
-# include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 /**
  * @brief Struct to store the stack
@@ -43,11 +45,6 @@ typedef struct s_push_swap
 	int				size;
 }					t_ps;
 
-// my label f
-
-// my aliases for my structures in each function
-// are declared as the initials of each function
-
 // preliminary_checks.c
 void				ft_init_values(t_ps *sfiv);
 void				check_args(char **argv, t_ps *sca);
@@ -57,12 +54,14 @@ void				ft_error(t_stack **stack, t_ps *sfe);
 void				ft_success(t_stack **stack, t_ps *sfs);
 int					find_repetions(long a, long b);
 int					size_stk(t_stack *stack);
-int					number_bits(int argc);
+int					count_bits(int max);
 
 // inicialize_linked_list.c
 
 t_stack				*build_linked_list(t_ps *root, char **argv);
-t_stack				*make_new_node(t_ps *smnn);
+t_stack				*make_new_node(void);
+t_stack				*ft_last(t_stack *lst);
+int					is_lst_sorted(t_stack *stack);
 
 // populate_and_sort.c
 
@@ -73,21 +72,28 @@ void				node_configuration(t_stack **stack, int *sorted, int size);
 
 void				radix(t_stack **stack_a, t_stack **stack_b, int bits);
 
+// insertion.c
+
+void				sort_three(t_stack **stack_a);
+void				sort_five(t_stack **stack_a, t_stack **stack_b);
+void				insertion_sort(t_stack **stack_a, t_stack **stack_b);
+
 // operations
 
 // pa and pb
-void				ft_push(t_stack **src, t_stack **dst, char c);
-// ra and rb
-void				ft_rotate(t_stack **stack, char c);
-// rr
-void				ft_rotate_ab(t_stack **a, t_stack **b);
-// rra and rrb
-void				ft_rev_rotate(t_stack **stack, char c);
-// rrr
-void				ft_rev_rotate_ab(t_stack **a, t_stack **b);
-// sa and sb
-void				ft_swap(t_stack **a, char c);
-// ss
-void				ft_swap_ab(t_stack **a, t_stack **b);
+void				push_a(t_stack **stack_a, t_stack **stack_b);
+void				push_b(t_stack **stack_a, t_stack **stack_b);
+// ra and rb and rr
+void				rotate_a(t_stack **stack_a);
+void				rotate_b(t_stack **stack_b);
+void				rotate_rr(t_stack **stack_a, t_stack **stack_b);
+// rra and rrb and rrr
+void				reverse_rotate_a(t_stack **stack_a);
+void				reverse_rotate_b(t_stack **stack_b);
+void				reverse_rotate_rrr(t_stack **stack_a, t_stack **stack_b);
+// sa and sb and ss
+void				swap_a(t_stack **stack_a);
+void				swap_b(t_stack **stack_b);
+void				swap_ss(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 11:17:43 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/08 19:29:04 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 06:56:51 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,15 @@ int	size_stk(t_stack *stack)
 	return (i);
 }
 
-int	number_bits(int argc)
+int	count_bits(int max)
 {
-	unsigned int	number_bits;
-	int				number;
+	int	count;
 
-	number = argc - 2;
-	number_bits = 0;
-	while (number > 0)
+	count = 0;
+	while (max != 0)
 	{
-		number_bits++;
-		number = number / 2;
+		max = max >> 1;
+		count++;
 	}
-	return (number_bits);
+	return (count);
 }
