@@ -1,6 +1,6 @@
 NAME = push_swap
 LIBFT = libs/libft/libft.a
-CFLAGS = -Wall -Wextra -O3 -g3
+CFLAGS = -Wall -Werror -Wextra -O3 -g3
 
 LIBFT_PATH = libs/libft
 OBJ_PATH = bin/

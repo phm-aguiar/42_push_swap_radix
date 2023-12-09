@@ -6,11 +6,12 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:52:05 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/09 10:10:58 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 20:06:04 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
@@ -19,8 +20,8 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		bits;
 
-	if (argc < 2)
-		return (0);
+	if (argc == 1)
+		exit(EXIT_FAILURE);
 	ft_init_values(&root);
 	stack_a = NULL;
 	stack_b = NULL;

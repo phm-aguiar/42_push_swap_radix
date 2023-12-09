@@ -6,12 +6,13 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:55:57 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/09 19:16:42 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 20:02:15 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stddef.h>
+#include <stdlib.h>
 
 void	ft_init_values(t_ps *sfiv)
 {

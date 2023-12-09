@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 12:13:42 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/09 18:50:15 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 19:55:30 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_push_swap
 // preliminary_checks.c
 void				ft_init_values(t_ps *sfiv);
 void				check_args(char **argv, t_ps *sca);
+void				check_null_string(char **argv);
 
 // utils.c
 void				ft_error(t_stack **stack, t_ps *sfe);
