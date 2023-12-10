@@ -6,12 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:52:05 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/09 20:06:04 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:20:14 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
@@ -23,7 +22,6 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit(EXIT_FAILURE);
 	ft_init_values(&root);
-	stack_a = NULL;
 	stack_b = NULL;
 	root.size = argc - 1;
 	check_args(argv + 1, &root);
@@ -31,14 +29,14 @@ int	main(int argc, char **argv)
 	stack_a = build_linked_list(&root, argv + 1);
 	initialize_and_sort(&root, argv + 1);
 	node_configuration(&stack_a, root.sorted, root.size);
-	if ((argc - 1) <= 50 && (argc - 1) > 3)
-		insertion_sort(&stack_a, &stack_b);
-	else if ((argc - 1) <= 3)
-		sort_three(&stack_a);
-	else if ((argc - 1) > 50)
-		radix(&stack_a, &stack_b, bits);
+	if (!is_lst_sorted(stack_a))
+	{
+		if ((argc - 1) <= 50 && (argc - 1) > 3)
+			insertion_sort(&stack_a, &stack_b);
+		else if ((argc - 1) <= 3)
+			sort_three(&stack_a);
+		else if ((argc - 1) > 50)
+			radix(&stack_a, &stack_b, bits);
+	}
 	ft_success(&stack_a, &root);
 }
-
-// ft_print_stack(stack_a);
-// print_tab(root.sorted, root.size);

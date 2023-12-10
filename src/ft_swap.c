@@ -6,16 +6,12 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:59:09 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/09 08:51:16 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:21:21 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/* sa (swap a): Swap the first 2 elements at the top of stack a.
-Do nothing if there is only one or no elements.
-sb (swap b): Swap the first 2 elements at the top of stack b.
-Do nothing if there is only one or no elements. */
 void	swap_a(t_stack **stack_a)
 {
 	t_stack	*temp_node;

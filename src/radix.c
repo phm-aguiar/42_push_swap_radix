@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:53:40 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/09 07:34:00 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:21:57 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ void	radix(t_stack **stack_a, t_stack **stack_b, int bits)
 		while (index < len_a)
 		{
 			if (((*stack_a)->order >> i) % 2 == 1)
-			{
 				rotate_a(stack_a);
-			}
 			else
 				push_b(stack_a, stack_b);
 			index++;

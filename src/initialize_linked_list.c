@@ -6,7 +6,7 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 14:42:19 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/09 07:18:04 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:19:37 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 int	is_lst_sorted(t_stack *stack)
 {
-	t_stack	*current;
+	t_stack	*temp;
 
-	current = stack;
-	while (current->next)
+	if (stack == NULL)
+		return (0);
+	temp = stack;
+	while (temp->next)
 	{
-		if (current->order > current->next->order)
+		if (temp->value > temp->next->value)
 			return (0);
-		current = current->next;
+		temp = temp->next;
 	}
 	return (1);
 }

@@ -6,18 +6,11 @@
 /*   By: phenriq2 <phenriq2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:58:52 by phenriq2          #+#    #+#             */
-/*   Updated: 2023/12/08 23:14:42 by phenriq2         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:21:04 by phenriq2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-/* pa (push a): Take the first element at
-the top of b and put it at the top of a.
-Do nothing if b is empty.
-pb (push b): Take the first element at the top
-of a and put it at the top of b.
-Do nothing if a is empty. */
 
 void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
